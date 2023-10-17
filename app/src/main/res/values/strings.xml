@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ELOC Gauges</string>
+    <string name="gps_distance">%dm</string>
+    <string name="gps_long_distance">&gt;%d</string>
+    <string name="battery_level">%d%%</string>
+    <string name="free_space">%d%%\nfree</string>
+    <string name="storage">Storage</string>
+    <string name="battery">Battery</string>
+    <string name="gps_accuracy">GPS Accuracy</string>
+</resources>

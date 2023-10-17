@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="normal_green">#44873e</color>
+    <color name="low_orange">#fe9901</color>
+    <color name="critical_red">#f95d48</color>
+    <color name="window_color">#2e2e2e</color>
+    <color name="low_storage">#ffc846</color>
+    <color name="normal_storage">#099dd1</color>
+</resources>

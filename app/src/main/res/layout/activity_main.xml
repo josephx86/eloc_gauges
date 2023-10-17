@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".activities.MainActivity">
+
+    <com.example.gauges.widgets.SimpleGauge
+        android:id="@+id/battery_gauge"
+        android:layout_width="0dp"
+        android:layout_height="84dp"
+        android:layout_margin="16dp"
+        app:alwaysFilled="false"
+        app:criticalColor="@color/critical_red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.33"
+        app:lowColor="@color/low_orange"
+        app:normalColor="@color/normal_green"
+        app:showDiscreteColors="true" />
+
+    <com.example.gauges.widgets.SimpleGauge
+        android:id="@+id/gps_gauge"
+        android:layout_width="0dp"
+        android:layout_height="84dp"
+        app:criticalColor="@color/normal_green"
+        app:layout_constraintStart_toEndOf="@id/battery_gauge"
+        app:layout_constraintTop_toTopOf="@id/battery_gauge"
+        app:layout_constraintWidth_percent="0.33"
+        app:lowColor="@color/low_orange"
+        app:lowColorThreshold="15"
+        app:normalColor="@color/critical_red"
+        app:showDiscreteColors="false" />
+
+    <com.example.gauges.widgets.SimpleGauge
+        android:id="@+id/storage_gauge"
+        android:layout_width="0dp"
+        android:layout_height="84dp"
+        app:alwaysFilled="false"
+        app:criticalColor="@color/critical_red"
+        app:layout_constraintEnd_toStartOf="@id/battery_gauge"
+        app:layout_constraintTop_toTopOf="@id/battery_gauge"
+        app:layout_constraintWidth_percent="0.33"
+        app:lowColor="@color/low_storage"
+        app:normalColor="@color/normal_storage"
+        app:showDiscreteColors="true" />
+
+    <NumberPicker
+        android:id="@+id/battery_number_picker"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="48dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/battery_gauge"
+        app:layout_constraintStart_toStartOf="@id/battery_gauge"
+        app:layout_constraintTop_toBottomOf="@id/battery_gauge" />
+
+    <NumberPicker
+        android:id="@+id/gps_number_picker"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="48dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/gps_gauge"
+        app:layout_constraintStart_toStartOf="@id/gps_gauge"
+        app:layout_constraintTop_toBottomOf="@id/gps_gauge" />
+
+    <NumberPicker
+        android:id="@+id/storage_number_picker"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="48dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/storage_gauge"
+        app:layout_constraintStart_toStartOf="@id/storage_gauge"
+        app:layout_constraintTop_toBottomOf="@id/storage_gauge" />
+
+    <TextView
+        android:id="@+id/gps_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/gps_gauge"
+        app:layout_constraintEnd_toEndOf="@id/gps_gauge"
+        app:layout_constraintStart_toStartOf="@id/gps_gauge"
+        app:layout_constraintTop_toTopOf="@id/gps_gauge"
+        tools:text="8825m" />
+
+    <TextView
+        android:id="@+id/battery_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/battery_gauge"
+        app:layout_constraintEnd_toEndOf="@id/battery_gauge"
+        app:layout_constraintStart_toStartOf="@id/battery_gauge"
+        app:layout_constraintTop_toTopOf="@id/battery_gauge"
+        tools:text="88%" />
+
+    <TextView
+        android:id="@+id/storage_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/storage_gauge"
+        app:layout_constraintEnd_toEndOf="@id/storage_gauge"
+        app:layout_constraintStart_toStartOf="@id/storage_gauge"
+        app:layout_constraintTop_toTopOf="@id/storage_gauge"
+        tools:text="95%\nFree" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:text="@string/storage"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/storage_gauge"
+        app:layout_constraintStart_toStartOf="@id/storage_gauge"
+        app:layout_constraintTop_toBottomOf="@id/storage_gauge" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:text="@string/battery"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/battery_gauge"
+        app:layout_constraintStart_toStartOf="@id/battery_gauge"
+        app:layout_constraintTop_toBottomOf="@id/battery_gauge" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:text="@string/gps_accuracy"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/gps_gauge"
+        app:layout_constraintStart_toStartOf="@id/gps_gauge"
+        app:layout_constraintTop_toBottomOf="@id/gps_gauge" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
